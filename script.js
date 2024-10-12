@@ -25,15 +25,14 @@ function keyboardInputHandler(e) {
   const keys = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "+", "-", "*", "/", ".", "Enter", "Backspace"];
   
   if (keys.includes(e.key)) {
-    switch (e.key) {
-      case "Enter":
-        calculate(res.value);
-        break;
-      case "Backspace":
-        res.value = res.value.slice(0, -1);
-        break;
-      default:
-        res.value += e.key;
+    if (e.key === "Enter") {
+      calculate(res.value);
+    } else if (e.key === "Backspace") {
+      res.value = res.value.slice(0, -1);
+    } else {
+      res.value += e.key;  // This acts like the "default" case
     }
   }
-}
+  
+  }
+
