@@ -30,7 +30,7 @@ function keyboardInputHandler(e) {
     } else if (e.key === "Backspace") {
       res.value = res.value.slice(0, -1);
     } else {
-      res.value += e.key;  // This acts like the "default" case
+      res.value += e.key; 
     }
   }
   
